@@ -40,10 +40,24 @@ Input AC signal(signal generator):
 
 
 ### DC analysis( simulation):
+![Image](https://github.com/user-attachments/assets/02d80bac-c555-4f31-9347-0314dee3c94a)
+From the simulation: if L= 180nm, W= 1um
+                    Vout= 1.647V and Id= 0.0001527A
 
 
+If the power rating( power dissipation across the resistor) is 100uW, given supply voltage is 1.8V, then the current through the resistor is given by:
+
+ Id = power/Voltage = 100u/1.8
+                     
+= 5.55*10^-5  (or 55.5uA)
+
+ 
+Now, (from the above calculation) Since the calculated value of current does not match the simulated value, must try maintaining the mosfet length at 180nm and vary/adjust the width to get the required current value.
 
 
+ 
+
+                                         
 
 
 
