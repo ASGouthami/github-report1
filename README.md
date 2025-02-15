@@ -74,6 +74,11 @@ So, therefore 1)--> -0.844<=0.366
 2)--> 1.744>=0.534  
 
 ### Transient analysis:
+![Image](https://github.com/user-attachments/assets/1777641c-ff17-4487-8528-bcab4ef5715b)
+
+Transient analysis in LTSpice is used to simulate a circuit’s time-domain response to time-varying inputs such as pulses, sine waves, or step inputs.
+
+
 
  
 
