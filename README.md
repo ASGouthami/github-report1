@@ -55,6 +55,26 @@ If the power rating( power dissipation across the resistor) is 100uW, given supp
 Now, (from the above calculation) Since the calculated value of current does not match the simulated value, must try maintaining the mosfet length at 180nm and vary/adjust the width to get the required current value.
 
 
+put tableeee here
+
+NMOS transistor should be operated in saturation region, this can be confirmed by the DC operating point analysis.
+
+Id= 55.5uA
+
+1)Vgd<= Vtn  and 2)Vds>=(Vgs-Vtn)
+
+*Vds= Vd- Vs = 1.744-0 =1.744
+
+*Vgd = 0.9-1.744 = -0.844
+
+*Vov = Vgs-Vtn = (0.9-0) -0.366 = 0.534
+
+So, therefore 1)--> -0.844<=0.366
+
+2)--> 1.744>=0.534  
+
+### Transient analysis:
+
  
 
                                          
