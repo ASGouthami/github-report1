@@ -73,6 +73,8 @@ So, therefore 1)--> -0.844<=0.366
 
 2)--> 1.744>=0.534  
 
+The DC operating point is (1.
+
 ### Transient analysis:
 
 Transient analysis in LTSpice is used to simulate a circuit’s time-domain response to time-varying inputs such as pulses, sine waves, or step inputs. Transient analysis is crucial in high speed applications where rise time, fall time, propagation delay determines the amplifiers suitability for fast signals. It evaluates the behavior of mosfet in response to sudden changes in input voltage and load.
@@ -100,6 +102,10 @@ We know that, gain is calculated by:
    Overall gain: Av = gm * Rout
 
   =1.93*1K
+
+  = 1.93K
+
+  
                                           
 
 
