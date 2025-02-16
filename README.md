@@ -75,6 +75,7 @@ So, therefore 1)--> -0.844<=0.366
 
 The DC operating point is (1.744V, 55.5uA)
 
+
 ### Transient analysis:
 
 Transient analysis in LTSpice is used to simulate a circuit’s time-domain response to time-varying inputs such as pulses, sine waves, or step inputs. Transient analysis is crucial in high speed applications where rise time, fall time, propagation delay determines the amplifiers suitability for fast signals. It evaluates the behavior of mosfet in response to sudden changes in input voltage and load.
@@ -119,7 +120,34 @@ We know that, gain is calculated by:
 
  In the simulation,  for the same circuit go to edit simulation option, change from transient to ac analysis. Set type of sweep as decade, number of poinits per decade as 20, start and stop frequency as 0.1Hz and 1THz to get the expected response.
 
+![Image](https://github.com/user-attachments/assets/0cb3d795-6bf7-4e0c-a5a5-4e4c83270ad3)
+
+The gain is nearly constant (flat response) over a wide frequency range, which indicates a stable amplification in the mid-band region.
+
+ The gain drops sharply at high frequencies, indicating the cutoff frequency (fH) or bandwidth limitation due to MOSFET capacitances (Cgs, Cgd) and parasitic effects.
+
+ The gain remains stable across a wide range of frequencies before it starts to roll off at high frequencies.
+
+ From the graph, fH is approximately in the GHz range, meaning the amplifier has a wide bandwidth.
+
+
+ ### Inference
+
+ 1.The CS amplifier provides the voltage gain by inverting the input signal.
  
+ 2.The gain depends on Vgs, transistor parameters, and drain resistance.
+
+ 3. The circuit has flat gain response in the mid-frequency range.
+
+ 4. At high frequencies (>100 MHz to GHz range), the gain starts decreasing due to MOSFET parasitic capacitances (Cgs, Cgd).
+
+ 5. The upper cutoff frequency (fH) is in the GHz range, making the amplifier suitable for high-speed applications.
+
+ 6. The circuit is suitable for low to moderate gain amplification.
+
+ 7. Works well for high-speed applications due to its wide bandwidth.
+
+ 8. The circuit can be optimized for RF and analog signal processing.
 
 
 
