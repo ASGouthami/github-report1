@@ -17,8 +17,12 @@ objective: The objective of this report is to analyse the DC biasing conditions,
 ### circuit diagram:
 ![Image](https://github.com/user-attachments/assets/126e8794-4bd5-4100-838e-90e58d624d87)
 
+### Procedure:
+For LTspice simulation, TSMC018 library file was included which is crucial for acccurate MOSFET simulation in TSMC 0.18um( 180nm)CMOS technology. Stored this library file in the LTspice folder or the same directory as our simulation file. Carried out DC, AC and Transcient analysis of the CS amplifier circuit.
+
+
 ### Component details:
-For LTspice simulation, TSMC018 library file was included which is crucial for acccurate MOSFET simulation in TSMC 0.18um( 180nm)CMOS technology. Stored this library file in the LTspice folder or the same directory as our simulation file. Drain resistor converts the drain current to output voltage, limits the current through the transistor and affects the small-signal gain.
+ Drain resistor converts the drain current to output voltage, limits the current through the transistor and affects the small-signal gain.
 
 Here NMOS transistor must operate in saturation region, for amplification.
 
@@ -41,6 +45,8 @@ Input AC signal(signal generator):
 
 
 ### DC analysis( simulation):
+In DC analysis the goal is to establish the stable operationg point for the MOSFET, ensuring it remains in the saturation region for proper amplification.
+
 ![Image](https://github.com/user-attachments/assets/02d80bac-c555-4f31-9347-0314dee3c94a)
 From the simulation: if L= 180nm, W= 1um
                     Vout= 1.647V and Id= 0.0001527A
@@ -149,6 +155,128 @@ The gain is nearly constant (flat response) over a wide frequency range, which i
  7. Works well for high-speed applications due to its wide bandwidth.
 
  8. The circuit can be optimized for RF and analog signal processing.
+
+
+
+
+
+
+
+
+
+### (Problem 2)
+### Introduction
+
+The common source amplifier is the basic configuration of mosfet used in analog circuits. It serves as voltage amplifier where, the input is applied to gate terminal of NMOS, output is taken from drain terminal, source terminal of nmos is grounded and the body terminal is connected to the lowest potential i.e gnd. 
+The circuit has NMOS as active device, a passive resistor(Rd) is replaced by PMOS transistor, where its gate terminal is connected to a bias voltage Vb. The source of PMOS is biased using a DC voltage source(1.8V here), and body terminal of PMOS is connected to source
+The analysis of CS amplifier involves- DC analysis,AC analysis and Transient analysis(using LTspice software)
+
+objective: The objective of this report is to analyse the DC biasing conditions, gain, output impedence and frequency response.
+
+### Key components used and their roles:
+1. V1( 1.8 DC source): Provides the power supply voltage (Vdd) for the circuit, ensuring proper MOSFET operation.
+
+2. PMOS: Acts as the active load or current source for the NMOS transistor (M2).
+   
+3. NMOS: Acts as the main amplifying transistor in a common-source configuration.
+ 
+4.Vb( bias voltage, V2 here) : Provides a bias voltage to the PMOS transistor’s gate, setting the operating point.
+
+5.V3- AC input(at gate of nmos): enables amplification by controling drain current.
+
+### Circuit diagram:
+
+
+
+### Procedure:
+For LTspice simulation, TSMC018 library file was included which is crucial for acccurate MOSFET simulation in TSMC 0.18um( 180nm)CMOS technology. Stored this library file in the LTspice folder or the same directory as our simulation file. Carried out DC, AC and Transcient analysis of the circuit.
+
+
+
+### Component details:
+Here NMOS and PMOS transistor must operate in saturation region, for amplification.
+
+Model:CMOSN
+
+MOSFET lengt(L): 
+
+MOSFET Width(W):
+
+Threshold Voltage(Vtn): 0.366V
+
+Input AC signal(signal generator):
+      * DC voltage(DC offset): 0.9V
+      * Amplitude: 50mV
+      * Frequency: 1KHz
+
+
+Mode2:CMOSP
+
+MOSFET lengt(L): 
+
+MOSFET Width(W):
+
+Threshold Voltage(Vtn): -0.39V
+
+V1(DC source voltage) : 1.8V
+
+Vb(bias voltage, V2): 
+
+
+### DC analysis(Simulation):
+In DC analysis the goal is to establish the stable operationg point for the MOSFET, ensuring it remains in the saturation region for proper amplification.
+
+
+
+
+
+### Transcient analysis:
+
+Transient analysis in LTSpice is used to simulate a circuit’s time-domain response to time-varying inputs such as pulses, sine waves, or step inputs. Transient analysis is crucial in high speed applications where rise time, fall time, propagation delay determines the amplifiers suitability for fast signals. It evaluates the behavior of mosfet in response to sudden changes in input voltage and load.
+
+
+In this experiment ,we are finding the gain and output impedence of the circuit. Performed the transient analysis keeping the sinusoidal voltage signal DC offset as 0.9V, amplitude 50mV , frequency 1KHz and the AC amplitude as 1V. In the configure analysis, select stop time as 3ms.
+
+
+### AC analysis:
+
+The AC analysis in LTspice is used to study the frequency response of an amplifier, including gain, bandwidth and phase shift. In AC analysis MOSFET is treated as a linear small-signal amplifier, where the drain current is proportional to small variations in gate volatge .By applying a small-signal AC input, we can know how the circuit amplifies signals and how it behaves under varying frequencies.
+
+
+
+
+
+
+
+### Inference:
+1.The PMOS active load significantly improves gain and output resistance, leading to better amplification.
+
+2. From the frequency response curve , the bandwidth is influenced by the parasitic capacitances of the PMOS transistor.
+
+3. From AC analysis voltage gain is higher than CS amplifier with a resistive load.
+
+4. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
