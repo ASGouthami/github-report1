@@ -73,7 +73,7 @@ So, therefore 1)--> -0.844<=0.366
 
 2)--> 1.744>=0.534  
 
-The DC operating point is (1.
+The DC operating point is (1.744V, 55.5uA)
 
 ### Transient analysis:
 
@@ -106,7 +106,20 @@ We know that, gain is calculated by:
   = 1.93K
 
   
-                                          
+ ### AC analysis
+
+ The AC analysis in LTspice is used to study the frequency response of an amplifier, including gain, bandwidth and phase shift. In AC analysis MOSFET is treated as a linear small-signal amplifier, where the drain current is proportional to small variations in gate volatge .By applying a small-signal AC input, we can know how the circuit amplifies signals and how it behaves under varying frequencies.
+
+ iD = gm*vgs
+ where gm is the transconductance. The voltage gain of the amplifier is given by
+
+ Av= -gm(RD||RL) 
+
+ The negative sign indicates the 180 degree phase shift between the input and output signals.
+
+ In the simulation,  for the same circuit go to edit simulation option, change from transient to ac analysis. Set type of sweep as decade, number of poinits per decade as 20, start and stop frequency as 0.1Hz and 1THz to get the expected response.
+
+ 
 
 
 
