@@ -74,9 +74,33 @@ So, therefore 1)--> -0.844<=0.366
 2)--> 1.744>=0.534  
 
 ### Transient analysis:
+
+Transient analysis in LTSpice is used to simulate a circuit’s time-domain response to time-varying inputs such as pulses, sine waves, or step inputs. Transient analysis is crucial in high speed applications where rise time, fall time, propagation delay determines the amplifiers suitability for fast signals. It evaluates the behavior of mosfet in response to sudden changes in input voltage and load.
+
 ![Image](https://github.com/user-attachments/assets/1777641c-ff17-4487-8528-bcab4ef5715b)
 
-Transient analysis in LTSpice is used to simulate a circuit’s time-domain response to time-varying inputs such as pulses, sine waves, or step inputs.
+In this experiment ,we are finding the gain and output impedence of the circuit. Performed the transient analysis keeping the sinusoidal voltage signal DC offset as 0.9V, amplitude 50mV , frequency 1KHz and the AC amplitude as 1V. In the configure analysis, select stop time as 3ms.
+
+From the graph(simulation):
+
+For L=180nm, W = 0.2um
+
+We can observe 180 degree phase shift in the amplified output voltage signal/wave.
+
+We know that, gain is calculated by:
+
+*gain = Vout/Vin
+
+=1.744/0.9
+
+ =1.93
+
+* output impedence, Rout = Rd =1Kohm
+
+   Overall gain: Av = gm * Rout
+
+  =1.93*1K
+                                          
 
 
 
