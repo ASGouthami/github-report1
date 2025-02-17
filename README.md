@@ -175,10 +175,10 @@ The gain is nearly constant (flat response) over a wide frequency range, which i
 ### Introduction
 
 The common source amplifier is the basic configuration of mosfet used in analog circuits. It serves as voltage amplifier where, the input is applied to gate terminal of NMOS, output is taken from drain terminal, source terminal of nmos is grounded and the body terminal is connected to the lowest potential i.e gnd. 
-The circuit has NMOS as active device, a passive resistor(Rd) is replaced by PMOS transistor, where its gate terminal is connected to a bias voltage Vb. The source of PMOS is biased using a DC voltage source(1.8V here), and body terminal of PMOS is connected to source
+The circuit has NMOS as active device, a passive resistor(Rd) is replaced by PMOS transistor, where its gate terminal is connected to a bias voltage Vb. The source of PMOS is biased using a DC voltage source(1.8V here), and body terminal of PMOS is connected to source.
 The analysis of CS amplifier involves- DC analysis,AC analysis and Transient analysis(using LTspice software)
 
-objective: The objective of this report is to analyse the DC biasing conditions, gain, output impedence and frequency response.
+objective: The objective of this report is to analyse the DC biasing conditions, gain, output impedence and frequency response, when RD is replaced by PMOS in CS amplifier circuit.
 
 ### Key components used and their roles:
 1. V1( 1.8 DC source): Provides the power supply voltage (Vdd) for the circuit, ensuring proper MOSFET operation.
@@ -206,9 +206,9 @@ Here NMOS and PMOS transistor must operate in saturation region, for amplificati
 
 Model:CMOSN
 
-MOSFET lengt(L): 
+MOSFET lengt(L): 240nm
 
-MOSFET Width(W):
+MOSFET Width(W):480nm
 
 Threshold Voltage(Vtn): 0.366V
 
@@ -220,19 +220,29 @@ Input AC signal(signal generator):
 
 Mode2:CMOSP
 
-MOSFET lengt(L): 
+MOSFET lengt(L): 240nm
 
-MOSFET Width(W):
+MOSFET Width(W):500nm
 
 Threshold Voltage(Vtn): -0.39V
 
 V1(DC source voltage) : 1.8V
 
-Vb(bias voltage, V2): 
+Vb(bias voltage, V2): 0.42V
 
 
 ### DC analysis(Simulation):
 In DC analysis the goal is to establish the stable operationg point for the MOSFET, ensuring it remains in the saturation region for proper amplification.
+
+Again considering the Power rating as 100uW, given supply voltage is 1.8V, then the current through the circuit is given by:
+
+ Id = power/Voltage = 100u/1.8
+                     
+= 5.55*10^-5  (or 55.5uA)
+
+Now,we need to change the length(same for both transistors) and width of PMOS and NMOS . Vb must be set so as to keep both the transistors in saturation region.
+
+
 
 
 
