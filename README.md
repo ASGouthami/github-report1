@@ -126,7 +126,7 @@ We know that, gain is calculated by:
  iD = gm*vgs
  where gm is the transconductance. The voltage gain of the amplifier is given by
 
- Av= -gm(RD||RL) 
+ Av= -gm* RD 
 
  The negative sign indicates the 180 degree phase shift between the input and output signals.
 
@@ -214,8 +214,11 @@ Threshold Voltage(Vtn): 0.366V
 
 Input AC signal(signal generator):
       * DC voltage(DC offset): 0.9V
-      * Amplitude: 50mV
-      * Frequency: 1KHz
+      
+   * Amplitude: 50mV
+      
+   * Frequency: 1KHz
+
 
 
 Mode2:CMOSP
@@ -242,33 +245,110 @@ Again considering the Power rating as 100uW, given supply voltage is 1.8V, then 
 
 Now,we need to change the length(same for both transistors) and width of PMOS and NMOS . Vb must be set so as to keep both the transistors in saturation region.
 
+|PMOS | NMOS | Vb | ID | Vout |
+|--------|--------|--------|--------|--------|
+| 1)L= 280nm,W= 500nm| L= 280nm, W= 480nm| 0.42V | 54.5uA | 1.376V|
+|2) L= 280nm, W= 900nm | L= 280nm, W= 580nm | 0.3V | 57.3uA | 1.483V|
+| 3)L= 320nm, W= 10.29um | L= 320nm, W= 0.61um | 0.9V | 52.4uA | 1.74V |
+| 4)L = 240nm, W= 500nm | L= 240nm, W= 480nm | 0.42V | 55.54uA | 0.776V |
 
-
-
+From the simulation, by dc analysis the only values for which for the transistors remain in saturation region is 4th values.
 
 ![Screenshot 2025-02-17 202355](https://github.com/user-attachments/assets/4b4d2273-f83c-443c-bfd0-c4813ba144b4)
 
 
+
+
+* Conditions for PMOS to be in saturaion region are :
+
+   Vgd>= Vtp --> (1) and Vds <= Vov --> (2)
+  
+  here Vg = 0.42V, Vd = 0.776V, Vtp = -0.39V, Vs = 1.8V
+  
+  (1) -->  0.42-0.776 >= -0.39
+  
+  -0.356V >= -0.39V
+  
+  (2) --> 0.776-1.8 <= (0.42-1.8) -(-0.39)
+  
+  -1.024V <= -0.99V
+
+  Therefore PMOS is in saturation region.
+
+* Conditions for NMOS to be in saturation region are :
+
+    Vgd <= Vtn --> (3) and Vds >= Vov -->(4)
+
+    here Vg = 0.9V, Vd = 0.776V, Vtn = 0.366V, Vs = 0V
+
+   (3) --> 0.9 - 0.776 <= 0.366
+ 
+    0.124 <= 0.366
+
+    (4) --> 0.776 - 0 >= (0.9 - 0) - 0.366
+
+     0.776V >= 0.534V
+
+Therefore NMOS is in saturation region. 
+
+so, Therefore, the dc bias voltage applied to the gate of PMOS is Vb = 0.42V
+
+The DC operating point of PMOS is (-1.024V, 55.5uA)  (Vds, ID)
+
+The DC operating point of NMOS is (0.776V, 55.5uA)
+
+
+
+
+
+
+
+
 ### Transcient analysis:
-
-
-![Screenshot 2025-02-17 203047](https://github.com/user-attachments/assets/f638adb5-d0fa-45d5-b3ba-44b08e60317d)
 
 Transient analysis in LTSpice is used to simulate a circuit’s time-domain response to time-varying inputs such as pulses, sine waves, or step inputs. Transient analysis is crucial in high speed applications where rise time, fall time, propagation delay determines the amplifiers suitability for fast signals. It evaluates the behavior of mosfet in response to sudden changes in input voltage and load.
 
 
+![Screenshot 2025-02-17 203047](https://github.com/user-attachments/assets/f638adb5-d0fa-45d5-b3ba-44b08e60317d)
+
+
+
 In this experiment ,we are finding the gain and output impedence of the circuit. Performed the transient analysis keeping the sinusoidal voltage signal DC offset as 0.9V, amplitude 50mV , frequency 1KHz and the AC amplitude as 1V. In the configure analysis, select stop time as 3ms.
+
+From the graph, we can see that the output signal is amplified( with amplitude of ~ 446.4mV, whereas input signal amplitude was 50mV). We can observe 180 degree phase shift in the amplified output voltage signal/wave.
+
+We know that, gain is calculated by:
+
+*gain = Voutp-p/Vinp-p
+
+= (777.25-329.91)mV/ (950-900)mV
+
+= 8.94
+
+
+
+
 
 
 ### AC analysis:
 
-![Screenshot 2025-02-17 203244](https://github.com/user-attachments/assets/efbe7861-c495-4725-a169-9eb66e37275f)
-
-
 
 The AC analysis in LTspice is used to study the frequency response of an amplifier, including gain, bandwidth and phase shift. In AC analysis MOSFET is treated as a linear small-signal amplifier, where the drain current is proportional to small variations in gate volatge .By applying a small-signal AC input, we can know how the circuit amplifies signals and how it behaves under varying frequencies.
 
+iD = gm*vgs
+ where gm is the transconductance.
 
+ In the simulation,  for the same circuit go to edit simulation option, change from transient to ac analysis. Set type of sweep as decade, number of poinits per decade as 20, start and stop frequency as 0.1Hz and 1THz to get the expected response.
+
+
+![Screenshot 2025-02-17 203244](https://github.com/user-attachments/assets/efbe7861-c495-4725-a169-9eb66e37275f)
+
+From the graph, the gain at low frequencies is approximately 22 dB.
+
+The gain remains relatively stable up to a certain frequency.
+At higher frequencies, the gain starts dropping sharply. The presence of parasitic capacitances in MOSFETs could be causing this roll-off.
+
+Due to its high gain and wide bandwidth, this amplifier circuit can be used in RF and high-speed communication systems. High gain (~22 dB) at low frequencies.
 
 
 
@@ -281,11 +361,26 @@ The AC analysis in LTspice is used to study the frequency response of an amplifi
 
 3. From AC analysis voltage gain is higher than CS amplifier with a resistive load.
 
-4. 
+4. When a PMOS transistor is used as the load, its output resistance  is much higher than a physical resistor, leading to a higher voltage gain.
+
+5.The presence of parasitic capacitances in MOSFETs could be causing this roll-off.
 
 
 
 
+## Conclusion:
+
+1.Higher Gain: A PMOS load provides a much higher resistance than a resistor, increasing voltage gain.
+
+2. Compact Design:CS amplifier with PMOS as resistive load takes up less space, making it ideal for integrated circuits (ICs).
+
+3. Larger Output Swing: Allows better utilization of the supply voltage, enabling a wider output range.
+
+4. Using a PMOS active load provides self-biasing, making the circuit more stable compared to using a resistor.
+
+5. Lower Power Consumption: Reduces power dissipation compared to using a resistor.
+
+   Replacing a resistor with a PMOS active load significantly improves gain, power efficiency, and frequency response, making it the preferred choice in integrated circuit (IC) amplifiers.
 
 
 
