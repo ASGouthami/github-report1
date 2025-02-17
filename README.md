@@ -61,7 +61,12 @@ If the power rating( power dissipation across the resistor) is 100uW, given supp
  
 Now, (from the above calculation) Since the calculated value of current does not match the simulated value, must try maintaining the mosfet length at 180nm and vary/adjust the width to get the required current value.
 
-
+| Length | Width | Id |
+|--------|--------|--------|
+| 180nm | 1um| 0.0001527 |
+| 180nm | 2um | 0.000275 |
+| 180nm |0.1um | 48.1uA | 
+| 180nm |  0.2um| 55.5uA| 
 
 
 NMOS transistor should be operated in saturation region, this can be confirmed by the DC operating point analysis.
@@ -129,6 +134,8 @@ We know that, gain is calculated by:
 
 ![Image](https://github.com/user-attachments/assets/0cb3d795-6bf7-4e0c-a5a5-4e4c83270ad3)
 
+From the above graph the gain is 2dB.
+
 The gain is nearly constant (flat response) over a wide frequency range, which indicates a stable amplification in the mid-band region.
 
  The gain drops sharply at high frequencies, indicating the cutoff frequency (fH) or bandwidth limitation due to MOSFET capacitances (Cgs, Cgd) and parasitic effects.
@@ -187,6 +194,7 @@ objective: The objective of this report is to analyse the DC biasing conditions,
 ### Circuit diagram:
 
 
+![Screenshot 2025-02-17 202254](https://github.com/user-attachments/assets/40bff19a-091c-42cb-b310-6df73b56bd9f)
 
 ### Procedure:
 For LTspice simulation, TSMC018 library file was included which is crucial for acccurate MOSFET simulation in TSMC 0.18um( 180nm)CMOS technology. Stored this library file in the LTspice folder or the same directory as our simulation file. Carried out DC, AC and Transcient analysis of the circuit.
@@ -228,9 +236,13 @@ In DC analysis the goal is to establish the stable operationg point for the MOSF
 
 
 
+![Screenshot 2025-02-17 202355](https://github.com/user-attachments/assets/4b4d2273-f83c-443c-bfd0-c4813ba144b4)
 
 
 ### Transcient analysis:
+
+
+![Screenshot 2025-02-17 203047](https://github.com/user-attachments/assets/f638adb5-d0fa-45d5-b3ba-44b08e60317d)
 
 Transient analysis in LTSpice is used to simulate a circuit’s time-domain response to time-varying inputs such as pulses, sine waves, or step inputs. Transient analysis is crucial in high speed applications where rise time, fall time, propagation delay determines the amplifiers suitability for fast signals. It evaluates the behavior of mosfet in response to sudden changes in input voltage and load.
 
@@ -239,6 +251,10 @@ In this experiment ,we are finding the gain and output impedence of the circuit.
 
 
 ### AC analysis:
+
+![Screenshot 2025-02-17 203244](https://github.com/user-attachments/assets/efbe7861-c495-4725-a169-9eb66e37275f)
+
+
 
 The AC analysis in LTspice is used to study the frequency response of an amplifier, including gain, bandwidth and phase shift. In AC analysis MOSFET is treated as a linear small-signal amplifier, where the drain current is proportional to small variations in gate volatge .By applying a small-signal AC input, we can know how the circuit amplifies signals and how it behaves under varying frequencies.
 
