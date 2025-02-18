@@ -343,12 +343,12 @@ iD = gm*vgs
 
 ![Screenshot 2025-02-17 203244](https://github.com/user-attachments/assets/efbe7861-c495-4725-a169-9eb66e37275f)
 
-From the graph, the gain at low frequencies is approximately 22 dB.
+From the graph, the gain at low frequencies is approximately 24 dB.
 
 The gain remains relatively stable up to a certain frequency.
 At higher frequencies, the gain starts dropping sharply. The presence of parasitic capacitances in MOSFETs could be causing this roll-off.
 
-Due to its high gain and wide bandwidth, this amplifier circuit can be used in RF and high-speed communication systems. High gain (~22 dB) at low frequencies.
+Due to its high gain and wide bandwidth, this amplifier circuit can be used in RF and high-speed communication systems. High gain (~24 dB) at low frequencies.
 
 
 
