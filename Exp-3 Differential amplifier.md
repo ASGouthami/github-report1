@@ -361,25 +361,34 @@ The Vo_pp (of clipped waveform) was 1.725V.
 ## Results and conclusion :
   With Resistor (Rss) as Tail Current Source:
 
-    *Moderate differential gain, limited by RssRss​.
-    *Output voltage swing is reduced due to voltage drop across Rss​.
-    *Low Common-Mode Rejection Ratio (CMRR) because Rss has low impedance.
+*Moderate differential gain, limited by RssRss​.
 
-   With Ideal Current Source (IssIss​) as Tail Current Source:
+ *Output voltage swing is reduced due to voltage drop across Rss​.
+ 
+ *Low Common-Mode Rejection Ratio (CMRR) because Rss has low impedance.
 
-    *Higher differential gain due to constant tail current.
-     *Improved output voltage swing as headroom increases.
-    *Higher CMRR because the ideal current source has high impedance.
+ With Ideal Current Source (IssIss​) as Tail Current Source:
+
+  *Higher differential gain due to constant tail current.
+  
+  *Improved output voltage swing as headroom increases.
+  
+  *Higher CMRR because the ideal current source has high impedance.
 
   With NMOS Current Source as Tail Current Source:
-
-    *Highest differential gain, as the NMOS provides an active current source with high impedance.
-    *Best output voltage swing, as the NMOS minimizes voltage drop in the tail.
-    *Maximum CMRR, since the NMOS offers better isolation from supply variations.
+  
+  *Highest differential gain, as the NMOS provides an active current source with high impedance.
+  
+  *Best output voltage swing, as the NMOS minimizes voltage drop in the tail.
+  
+  *Maximum CMRR, since the NMOS offers better isolation from supply variations.
 
  ## Inference:
 
  *Performed the DC, transient and ac analysis of differential circuit with Resistor Rss, Replaced by tail current source and then by nmos using LTspice.
+ 
  *differential amplifier naturally eliminates noise or interference that is present in both input signals.
+ 
  *Differential pair circuits are one of the most widely used circuit building blocks
+ 
  *Role of the tail current source is to suppress the effect of input CM level variations on the operation of M1 and M2 and the output level
