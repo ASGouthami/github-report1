@@ -1,4 +1,6 @@
 # Experiment-3 : Design and Analysis of MOS differential amplifier circuit
+
+## Introduction
 A MOS differential amplifier is a key circuit in analog design, used in operational amplifiers, comparators, and analog signal processing. It provides amplification of the difference between two input signals while rejecting common-mode signals (such as noise).
 
 A “single-ended” signal is defined as one that is measured with respect to a fixed potential, usually the
@@ -64,7 +66,9 @@ solution: we know that P= VI -->Iss = P/V = 2.2mW/2.2V = 1mA
 
  6) Vp (Common Source Node):
 
-  Connects the sources of M1 and M2 and helps define the operation point of the transistors.   
+  Connects the sources of M1 and M2 and helps define the operation point of the transistors. 
+
+  
 
 
  
