@@ -101,9 +101,11 @@ Width ( of M! and M2) = W = 6.4125um
 To verify the mosfets are in saturation region : VGD <= VTn
 
 (1.2V -1.25V) <= 0.495V
+
 -0.05V <= 0.495V
 
 and VDS >= Vov
+
 (1.25 - 0.4) >= (1.2 - 0.4) - 0.495
 
 0.85V >= 0.305V
@@ -114,6 +116,22 @@ The Q-points of both the mosfets(M1 and M2) are (0.85V, 0.5mA)
 
 #### 2. Transient Analysis
 
+Transient analysis in LTSpice is used to simulate a circuit’s time-domain response to time-varying inputs such as pulses, sine waves, or step inputs. Transient analysis is crucial in high speed applications where rise time, fall time, propagation delay determines the amplifiers suitability for fast signals. It evaluates the behavior of mosfet in response to sudden changes in input voltage and load.
+
+Input waveform and output waveform
+![Screenshot 2025-03-04 234256](https://github.com/user-attachments/assets/f1c40720-3a89-40b4-96d8-6d93181c473e)
+
+Input and output waveform together
+
+![Screenshot 2025-03-04 233507](https://github.com/user-attachments/assets/e07dcf48-8e41-454b-8773-59ce51fbc6a8)
+
+From the graph ,we can observe the 180 degree phase shift in the output signal and the output voltage (at Vocm node) is amplified .
+
+Input voltage amplitude given was 50mV.
+
+Gain = Vout_peak/Vin_peak 
+
+ = 0.199/0.05 = 3.98V/V
 
 
 
