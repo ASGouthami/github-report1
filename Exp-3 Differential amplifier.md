@@ -191,3 +191,15 @@ Here the dc offset voltage is set to 1.32V, input amplitude to 500mV, to observe
 The Vo_pp (of clipped waveform) was 1.693V
 
 ### B) Resistor Rss replaced with current source Iss:
+
+Replacing R3 with an active current source improves gain and CMRR. Better performance can be achieved by using an active current source instead of R3.
+
+#### 1.DC analysis - To fix the operating point (Q-point)
+![Screenshot 2025-03-05 012553](https://github.com/user-attachments/assets/e6996cab-0a91-4bfb-b728-36baa274f855)
+
+![Screenshot 2025-03-05 012058](https://github.com/user-attachments/assets/c145e2ab-7fbe-435c-9063-56668775b322)
+
+
+Mosfet aspect ratio was same ie, L= 180nm, W = 6.4175um
+
+Verified the mosfets are in saturation region by : VGD <=Vtn and VDS >= Vov.
