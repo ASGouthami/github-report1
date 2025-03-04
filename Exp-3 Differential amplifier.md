@@ -86,7 +86,7 @@ C) Resistor Rss replaced with NMOSFET
 
 The circuit is designed to reject common-mode signals and amplify only the difference between VinCM1 and VinCM2.The output swing is limited by the supply voltage VDD​ and transistor saturation conditions.
 
-#### 1.DC Analysis- To fix the operating point (Q-point)
+#### 1.DC Analysis- To fix the operating point (Q-point):
 
 
  ![Screenshot 2025-03-04 225421](https://github.com/user-attachments/assets/ea526cf7-3bc4-4e2b-8de4-2559819f84d9)
@@ -114,9 +114,11 @@ Therefore mosfets are in saturation region .
 
 The Q-points of both the mosfets(M1 and M2) are (0.85V, 0.5mA)
 
-#### 2. Transient Analysis
+#### 2. Transient Analysis:
 
 Transient analysis in LTSpice is used to simulate a circuit’s time-domain response to time-varying inputs such as pulses, sine waves, or step inputs. Transient analysis is crucial in high speed applications where rise time, fall time, propagation delay determines the amplifiers suitability for fast signals. It evaluates the behavior of mosfet in response to sudden changes in input voltage and load.
+
+Performed the transient analysis keeping the sinusoidal voltage signal DC offset as 1.2V, amplitude 50mV , frequency 1KHz and the AC amplitude as 1V. In the configure analysis, select stop time as 5ms.
 
 Input waveform and output waveform
 ![Screenshot 2025-03-04 234256](https://github.com/user-attachments/assets/f1c40720-3a89-40b4-96d8-6d93181c473e)
@@ -129,9 +131,26 @@ From the graph ,we can observe the 180 degree phase shift in the output signal a
 
 Input voltage amplitude given was 50mV.
 
-Gain = Vout_peak/Vin_peak 
+From the graph,
+Overall Gain(Av) = Vout_peak/Vin_peak 
 
  = 0.199/0.05 = 3.98V/V
+
+ From calculations,
+ gm = 2ID/Vov = (2* 0.5m)/ (0.8 - 0.495)
+   = 3.278m
+
+ Rout = Rd = 1.9Kohm
+ 
+ Overall gain :Av = gm * Rd
+ 
+ = 3.278m * 1.9K = 6.22V/V. 
+
+ #### 3. AC analysis:
+
+
+ ![Screenshot 2025-03-05 001349](https://github.com/user-attachments/assets/fb8ea219-02f5-4990-9343-5d51d7474067)
+
 
 
 
