@@ -41,9 +41,30 @@ solution: we know that P= VI -->Iss = P/V = 2.2mW/2.2V = 1mA
  
 ![Screenshot 2025-03-04 201203](https://github.com/user-attachments/assets/37ebbf0a-f323-4916-971e-996e0e48c8f3)
 
+## Key components and their roles:
+1) M1 & M2 (CMOSN - NMOS Transistors):
 
- 
+ Act as the differential pair, amplifying the difference between the input voltages VinCM1 and VinCM2.
 
- 
+ 2) R1 & R2 (1.9kΩ Resistors):
+
+ Act as load resistors, converting the amplified current difference into output voltage signals VoCM1 and VoCM2.
+
+ 3) R3 (400Ω Resistor):
+   
+   Provides a stable bias for the differential pair by setting the tail current through the NMOS transistors.
+   
+4) V1 & V2 (1.2V, 1.2V Voltage Sources):
+
+ Provide the differential input signals to the amplifier.
+
+5) V3 (2.2V Voltage Source):
+
+ Acts as the power supply (Vdd) for the circuit.
+
+ 6) Vp (Common Source Node):
+
+  Connects the sources of M1 and M2 and helps define the operation point of the transistors.   
+
 
  
