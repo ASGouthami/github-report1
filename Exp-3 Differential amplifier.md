@@ -68,6 +68,9 @@ solution: we know that P= VI -->Iss = P/V = 2.2mW/2.2V = 1mA
 
   Connects the sources of M1 and M2 and helps define the operation point of the transistors. 
 
+
+  For LTspice simulation, TSMC018 library file was included which is crucial for acccurate MOSFET simulation in TSMC 0.18um( 180nm)CMOS technology. Stored this library file in the LTspice folder or the same directory as our simulation file. Carried out DC, AC and Transcient analysis of the CS amplifier circuit.
+
   
 
 
