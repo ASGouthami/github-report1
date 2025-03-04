@@ -92,7 +92,28 @@ The circuit is designed to reject common-mode signals and amplify only the diffe
  ![Screenshot 2025-03-04 225421](https://github.com/user-attachments/assets/ea526cf7-3bc4-4e2b-8de4-2559819f84d9)
 
  
-![Screenshot 2025-03-04 225805](https://github.com/user-attachments/assets/397f2226-e525-492b-9f7f-f66025aac647)
+![Screenshot 2025-03-04 225805](https://github.com/user-attachments/assets/397f2226-e525-492b-9f7f-f66025aac647) ![Screenshot 2025-03-04 230120](https://github.com/user-attachments/assets/6916cee2-7526-40e9-8c2d-e66e86f968d1)
+
+Length( of M1 and M2) = L = 180nm
+
+Width ( of M! and M2) = W = 6.4125um
+
+To verify the mosfets are in saturation region : VGD <= VTn
+
+(1.2V -1.25V) <= 0.495V
+-0.05V <= 0.495V
+
+and VDS >= Vov
+(1.25 - 0.4) >= (1.2 - 0.4) - 0.495
+
+0.85V >= 0.305V
+
+Therefore mosfets are in saturation region .
+
+The Q-points of both the mosfets(M1 and M2) are (0.85V, 0.5mA)
+
+#### 2. Transient Analysis
+
 
 
 
