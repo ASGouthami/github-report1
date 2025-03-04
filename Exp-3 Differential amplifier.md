@@ -43,7 +43,7 @@ solution: we know that P= VI -->Iss = P/V = 2.2mW/2.2V = 1mA
  
 ![Screenshot 2025-03-04 201203](https://github.com/user-attachments/assets/37ebbf0a-f323-4916-971e-996e0e48c8f3)
 
-B) Resistor Rss replaced with current source
+B) Resistor Rss replaced with current source Iss
 
 ![Screenshot 2025-03-04 224142](https://github.com/user-attachments/assets/6eb6b9e5-bfb7-4105-b32b-bedd5648c84c)
 
@@ -114,6 +114,19 @@ Therefore mosfets are in saturation region .
 
 The Q-points of both the mosfets(M1 and M2) are (0.85V, 0.5mA)
 
+
+
+** Now, increase the Vincm to 1.3V from 1.2V (0.1V increase), these are the respective changes.
+
+Vocm changes to 1.1V from 1.25V and Vp changes to 0.46V from 0.4V.
+
+![Screenshot 2025-03-05 003029](https://github.com/user-attachments/assets/8a940557-780d-4170-8d87-030519da13c5)
+
+![Screenshot 2025-03-05 003124](https://github.com/user-attachments/assets/87b60173-aea2-4d11-8ca1-3d1342629503)
+
+so, there is a slight variation in the Q-point as (0.644V, 0.576mA)
+
+
 #### 2. Transient Analysis:
 
 Transient analysis in LTSpice is used to simulate a circuit’s time-domain response to time-varying inputs such as pulses, sine waves, or step inputs. Transient analysis is crucial in high speed applications where rise time, fall time, propagation delay determines the amplifiers suitability for fast signals. It evaluates the behavior of mosfet in response to sudden changes in input voltage and load.
@@ -148,9 +161,33 @@ Overall Gain(Av) = Vout_peak/Vin_peak
 
  #### 3. AC analysis:
 
+The AC analysis in LTspice is used to study the frequency response of an amplifier, including gain, bandwidth and phase shift. In AC analysis MOSFET is treated as a linear small-signal amplifier, where the drain current is proportional to small variations in gate volatge .By applying a small-signal AC input, we can know how the circuit amplifies signals and how it behaves under varying frequencies.
+
+For the same circuit, in the configure analysis select decade as type of sweep, with starting frequenciy o.1Hz and stop frequency as 1THz. 
 
  ![Screenshot 2025-03-05 001349](https://github.com/user-attachments/assets/fb8ea219-02f5-4990-9343-5d51d7474067)
 
+From the graph , the gain in dB scale is 12.6dB - 3dB = 9.6dB
+
+#### 4. To calculate maximum input swing and output swing
+
+Vincm_min = Vth1 + Vov = 0.495 + 0.4 = 0.895V
+
+Vincm_max = VDD -(RD*Iss)/2 + Vth = 2.2 -(1.9k * 1m)/2 + 0.495 = 1.745V
+
+Therefore Vincm = (Vincm_min + Vincm_max)/2 = 1.32V
+
+and Vocm_min = Vov1 +Vov3 = (0.8 - 0.495) +0.4 = 0.705V
+
+Vocm_max = VDD - IDRD = 2.2 -(0.5m* 1.9K) = 1.25V
+
+Therefore Vocm = (Vocm_min + Vocm_max)/2 = 0.977V
 
 
+![Screenshot 2025-03-05 010122](https://github.com/user-attachments/assets/15e1c509-e9be-4955-b36c-5ded18677781)
 
+Here the dc offset voltage is set to 1.32V, input amplitude to 500mV, to observe the clipped output waveform.
+
+The Vo_pp (of clipped waveform) was 1.693V
+
+### B) Resistor Rss replaced with current source Iss:
