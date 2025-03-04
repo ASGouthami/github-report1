@@ -16,3 +16,34 @@ outputs are also differential and swing around the output CM level, Vout,C M .
 Such a circuit indeed offers
 some of the advantages of differential signaling: high rejection of supply noise, higher output swings, etc.
 
+## Aim of the experiment: Design and analyse differential amplifier circuit for the following specifications:
+VDD= 2.2V , P<=2.2mW , Vincm =1.2V , Vocm = 1.25V , Vp = 0.4V 
+Perform: DC analysis, transient analysis, frequency response and extract the parameters.
+
+
+![Screenshot 2025-03-04 194042](https://github.com/user-attachments/assets/8a00714e-48c5-4f41-8c8d-d9f0e7a79d9a)
+
+solution: we know that P= VI -->Iss = P/V = 2.2mW/2.2V = 1mA
+
+ Iss = 1mA
+
+ ID = Iss/2 = 1m/2 --> ID = 0.5mA
+
+ (from VDD = IDRD + Vocm)
+
+ RD = (VDD - Vocm)/ID --> RD = (2.2-1.25)/0.5m --> RD = 1.9Kohm
+
+ Rss = Vp/Iss = 0.4/1m --> Rss = 400ohm
+
+ ## circuit diagram:
+
+
+ 
+![Screenshot 2025-03-04 201203](https://github.com/user-attachments/assets/37ebbf0a-f323-4916-971e-996e0e48c8f3)
+
+
+ 
+
+ 
+
+ 
