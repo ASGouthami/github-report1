@@ -39,9 +39,19 @@ solution: we know that P= VI -->Iss = P/V = 2.2mW/2.2V = 1mA
 
  ## circuit diagram:
 
-
+ A)With Resistor Rss
  
 ![Screenshot 2025-03-04 201203](https://github.com/user-attachments/assets/37ebbf0a-f323-4916-971e-996e0e48c8f3)
+
+B) Resistor Rss replaced with current source
+
+![Screenshot 2025-03-04 224142](https://github.com/user-attachments/assets/6eb6b9e5-bfb7-4105-b32b-bedd5648c84c)
+
+
+C) Resistor Rss replaced with NMOSFET
+
+![Screenshot 2025-03-04 224733](https://github.com/user-attachments/assets/f3eadefa-6944-4821-86f6-c9b410c3bb90)
+
 
 ## Key components and their roles:
 1) M1 & M2 (CMOSN - NMOS Transistors):
@@ -68,10 +78,21 @@ solution: we know that P= VI -->Iss = P/V = 2.2mW/2.2V = 1mA
 
   Connects the sources of M1 and M2 and helps define the operation point of the transistors. 
 
+## Procedure:
+  For LTspice simulation, TSMC018 library file was included which is crucial for acccurate MOSFET simulation in TSMC 0.18um( 180nm)CMOS technology. Stored this library file in the LTspice folder or the same directory as our simulation file. Carried out DC, AC and Transcient analysis of the differential amplifier circuit.
 
-  For LTspice simulation, TSMC018 library file was included which is crucial for acccurate MOSFET simulation in TSMC 0.18um( 180nm)CMOS technology. Stored this library file in the LTspice folder or the same directory as our simulation file. Carried out DC, AC and Transcient analysis of the CS amplifier circuit.
+## Design and analysis
+###  A) With Resistor Rss:
 
-  
+The circuit is designed to reject common-mode signals and amplify only the difference between VinCM1 and VinCM2.The output swing is limited by the supply voltage VDD​ and transistor saturation conditions.
 
+#### 1.DC Analysis- To fix the operating point (Q-point)
+
+
+ ![Screenshot 2025-03-04 225421](https://github.com/user-attachments/assets/ea526cf7-3bc4-4e2b-8de4-2559819f84d9)
 
  
+![Screenshot 2025-03-04 225805](https://github.com/user-attachments/assets/397f2226-e525-492b-9f7f-f66025aac647)
+
+
+
