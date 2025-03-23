@@ -72,4 +72,9 @@ where for Mosfet M3 and M2, W=101.592um and l=180nm.
 ### Transient analysis: 
 ![Screenshot 2025-03-23 190342](https://github.com/user-attachments/assets/55831373-6952-4a32-be29-9c5febc39864)
 
+![Screenshot 2025-03-23 190759](https://github.com/user-attachments/assets/ff34bfa5-f657-47ea-b1b7-1bc3f25136ac)
+
+
+
+### AC analysis: 
 ![Screenshot 2025-03-23 190006](https://github.com/user-attachments/assets/b67c9a81-f5ef-4374-9296-73e4ffefc804)
