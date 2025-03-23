@@ -27,6 +27,9 @@ Since: 𝐼_total= 𝐼_ref+𝐼_x
 
 therefore, I_ref =I_x = I_total/2 = 0.2778mA
 
+## Procedure:
+For LTspice simulation, TSMC018 library file was included which is crucial for acccurate MOSFET simulation in TSMC 0.18um( 180nm)CMOS technology. Stored this library file in the LTspice folder or the same directory as our simulation file. Carried out DC, AC and Transcient analysis of the differential amplifier circuit.
+
 ### Current mirror for ratio 1:1 
 
 To obtain the current value according to the given ratio, the provided values of W/L for M1 is 101.592um/180nm , M2 is 101.592um/180nm, and M3 is 101.592um/180nm.
