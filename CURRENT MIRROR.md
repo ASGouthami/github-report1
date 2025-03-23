@@ -151,10 +151,97 @@ To obtain the current value according to the given ratio, the provided values of
 
 Gain is 29.102dB
 
+###  Current mirror for aspect ratio 1:3 
+
+As we know It=Iref+Ix
+
+Therefore, for 1:3 aspect ratio 3*Iref=Ix
+
+It = Iref + 3*Iref
+
+So,Iref=It/4
+
+It=P/Vdd
+
+It=1mW/1.8V
+
+It=0.555mA.
+
+Therefore,Iref=0.1388mA.
+
+Here ,The aspect ratio of MOSFET M2 is thrice of M3
+
+To obtain the current value according to the given ratio, the provided values of W/L for M1 is 150um/180nm , M2 is 304.776um/180nm, and M3 is 101.592um/180nm.
+
+
+![Screenshot 2025-03-24 004837](https://github.com/user-attachments/assets/809bd540-df4e-4e25-b4f2-a6963ccca5f1)
+
+### DC analysis (for 1:3 mirror ratio) :
+
+![Screenshot 2025-03-24 004909](https://github.com/user-attachments/assets/f20b3c90-7048-4329-8100-5bb94eb37828)
+
+### Transient analysis ( for 1:3 mirror ratio) :
+
+![Screenshot 2025-03-24 005617](https://github.com/user-attachments/assets/0e692c22-7064-4224-9396-d7ab7bacf42c)
+
+
+![Screenshot 2025-03-24 005513](https://github.com/user-attachments/assets/e6e01c17-4cad-4a85-bc30-444999f08dbb)
+
+ dc_offset = 0.5V and assume amplitude as 20mV and frequency as 1Khz. And the amplitude of obtained output waveform was 0.5801V (peak voltage)
+
+ ### AC analysis  ( for 1:3 mirror ratio) :
+
+ 
+![Screenshot 2025-03-24 010059](https://github.com/user-attachments/assets/2c22c90d-b827-4a31-b3fe-496aea269a9b)
+
+Gain is 28.97dB
+
+###  Current mirror for aspect ratio 1:4 
+
+
+As we know It=Iref+Ix
+
+Therefore, for 1:4 aspect ratio 4*Iref=Ix
+
+It = Iref + 4*Iref
+
+So,Iref=It/5
+
+It=P/Vdd
+
+It=1mW/1.8V
+
+It=0.555mA.
+
+Therefore,Iref=0.111mA.
+
+Here ,The aspect ratio of MOSFET M2 is four times that of M3
+
+To obtain the current value according to the given ratio, the provided values of W/L for M1 is 160um/180nm , M2 is 406.368um/180nm, and M3 is 101.592um/180nm.
 
 
 
+![Screenshot 2025-03-24 011200](https://github.com/user-attachments/assets/729b0c5f-5ac9-4023-9c25-28f162ef8458)
 
+### DC analysis (for 1:4 mirror ratio) :
+
+![Screenshot 2025-03-24 011437](https://github.com/user-attachments/assets/7ccf7728-2f19-4fc0-ab6a-e4f2c2a148a1)
+
+### Transient analysis ( for 1:4 mirror ratio) :
+
+
+![Screenshot 2025-03-24 012348](https://github.com/user-attachments/assets/2add23ef-4428-4f04-9512-6e3c32b9a36c)
+
+
+![Screenshot 2025-03-24 012006](https://github.com/user-attachments/assets/027a29e3-e412-49a0-bf50-9d8b7ed2b0f3)
+
+ dc_offset = 0.5V and assume amplitude as 20mV and frequency as 1Khz. And the amplitude of obtained output waveform was 0.505V (peak voltage)
+
+  ### AC analysis  ( for 1:4 mirror ratio) :
+
+ ![Screenshot 2025-03-24 012126](https://github.com/user-attachments/assets/51f1e584-d945-4767-b5e4-f9435b0b0514)
+
+ Gain is 29.1db
 
 
 
