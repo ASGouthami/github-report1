@@ -6,3 +6,6 @@ Here is a circuit of basic current mirror:
 
 ![Screenshot 2025-03-23 153311](https://github.com/user-attachments/assets/41ff46a4-edbc-4463-928a-7c0fff060b5b)
 
+## Aim of the experiment ( Design question) : Design and analyse current mirror circuit as a active load in amplifier circuits.
+
+
