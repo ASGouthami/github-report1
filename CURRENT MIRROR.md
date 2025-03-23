@@ -9,3 +9,9 @@ Here is a circuit of basic current mirror:
 ## Aim of the experiment ( Design question) : Design and analyse current mirror circuit as a active load in amplifier circuits.
 
 
+![Screenshot 2025-03-23 155247](https://github.com/user-attachments/assets/4d32426c-47db-4e49-a5d6-880940f0bed1)
+
+#### Given design requirements:
+gain(Av) > -10 V/V, 
+Supply voltage Vdd = 1.8V,
+Power dissipation P<= 1mW
