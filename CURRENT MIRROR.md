@@ -30,7 +30,7 @@ therefore, I_ref =I_x = I_total/2 = 0.2778mA
 ## Procedure:
 For LTspice simulation, TSMC018 library file was included which is crucial for acccurate MOSFET simulation in TSMC 0.18um( 180nm)CMOS technology. Stored this library file in the LTspice folder or the same directory as our simulation file. Carried out DC, AC and Transcient analysis of the differential amplifier circuit.
 
-### Current mirror for ratio 1:1 
+### Current mirror for aspect ratio 1:1 
 
 To obtain the current value according to the given ratio, the provided values of W/L for M1 is 101.592um/180nm , M2 is 101.592um/180nm, and M3 is 101.592um/180nm.
 Vin is selected in such a way that all the mosfets should be in saturation region so the given Vin is 0.5V. for 1:1 ratio Iref=Ix
@@ -71,13 +71,90 @@ The aspect ratio of MOSFET M3 and M2 is made equal, and  here from the simulatio
 
 where for Mosfet M3 and M2, W=101.592um and l=180nm. 
 
+Both NMOS and PMOS satisfies the condition of saturation region.
 
-### Transient analysis: 
+
+### Transient analysis (for 1:1 mirror ratio): 
+Transient analysis in LTSpice is used to simulate a circuit’s time-domain response to time-varying inputs such as pulses, sine waves, or step inputs. Transient analysis is crucial in high speed applications where rise time, fall time, propagation delay determines the amplifiers suitability for fast signals. It evaluates the behavior of mosfet in response to sudden changes in input voltage and load.
+
+Performed the transient analysis keeping the sinusoidal voltage signal DC offset as 0.5V, amplitude 20mV , frequency 1KHz and the AC amplitude as 1V. In the configure analysis, select stop time as 5ms. And the output waveform had amplitude of 0.5957V (peak voltage).
 ![Screenshot 2025-03-23 190342](https://github.com/user-attachments/assets/55831373-6952-4a32-be29-9c5febc39864)
 
 ![Screenshot 2025-03-23 190759](https://github.com/user-attachments/assets/ff34bfa5-f657-47ea-b1b7-1bc3f25136ac)
 
 
 
-### AC analysis: 
+### AC analysis (for 1:1 mirror ratio): 
+
+#### Steps to get Ac analysis Waveform:
+
+   * In simulation tab select AC Analysis.
+   * In the AC Analysis tab, select Type of Sweep as Decade.
+   * Enter the number of points per decade (ex:20) and the frequency range ( 0.1Hz to 1THz).
+
 ![Screenshot 2025-03-23 190006](https://github.com/user-attachments/assets/b67c9a81-f5ef-4374-9296-73e4ffefc804)
+
+Gain is 29.1dB
+
+### Current mirror for aspect ratio 1:2 
+
+As we know It=Iref+Ix
+
+Therefore, for 1:2 aspect ratio 2*Iref=Ix
+
+It = Iref + 2*Iref
+
+So,Iref=It/3
+
+It=P/Vdd
+
+It=1mW/1.8V
+
+It=0.555mA.
+
+Therefore,Iref=0.185mA.
+
+Here ,The aspect ratio of MOSFET M2 is twice of M3
+
+To obtain the current value according to the given ratio, the provided values of W/L for M1 is 135um/180nm , M2 is 203.184um/180nm, and M3 is 101.592um/180nm.
+
+
+![Screenshot 2025-03-23 235339](https://github.com/user-attachments/assets/5fa3c940-bee3-4dce-9f1d-04cad6d326e4)
+
+### DC analysis (for 1:2 mirror ratio) :
+
+![Screenshot 2025-03-23 235813](https://github.com/user-attachments/assets/f9aac8cf-ad58-4754-bb77-9d22a3a849a1)
+
+### Transient analysis ( for 1:2 mirror ratio) :
+
+    * Replace DC input with an AC signal.
+    
+    * Use SINE(dc_offset, Amplitude, Frequency).
+    
+    * Go to "Simulate" > "Edit Simulation Cmd" > "Transient". 
+    
+    * Set Stop Time: 5ms.
+    
+    * Our dc_offset = 0.5V and assume amplitude as 20mV and frequency as 1Khz. And the amplitude of obtained output waveform was 0.585V (peak voltage)
+
+
+![Screenshot 2025-03-24 000352](https://github.com/user-attachments/assets/ba4b3a6b-a7b0-4da5-9d18-6ae762d3e760)
+
+
+![Screenshot 2025-03-24 000312](https://github.com/user-attachments/assets/9e388b17-37bc-445b-9e45-3920218f3750)
+
+### AC analysis  ( for 1:2 mirror ratio) :
+
+
+![Screenshot 2025-03-24 003304](https://github.com/user-attachments/assets/b70ca731-19b2-435d-be72-47621ce9f200)
+
+
+Gain is 29.102dB
+
+
+
+
+
+
+
+
