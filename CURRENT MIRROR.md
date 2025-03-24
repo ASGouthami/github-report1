@@ -47,7 +47,7 @@ The drain current with channel length modulation is expressed as:
 
 ID = (1/2) * μn * Cox * (W/L) * (VGS - Vth)^2 * (1 + λ * VDS)
 
-For a 1:1 current mirror, we have the relationship:
+For a 1:1 current mirror, we have the relationship as:
 
 Iref = Ix
 
@@ -78,6 +78,9 @@ Both NMOS and PMOS satisfies the condition of saturation region.
 Transient analysis in LTSpice is used to simulate a circuit’s time-domain response to time-varying inputs such as pulses, sine waves, or step inputs. Transient analysis is crucial in high speed applications where rise time, fall time, propagation delay determines the amplifiers suitability for fast signals. It evaluates the behavior of mosfet in response to sudden changes in input voltage and load.
 
 Performed the transient analysis keeping the sinusoidal voltage signal DC offset as 0.5V, amplitude 20mV , frequency 1KHz and the AC amplitude as 1V. In the configure analysis, select stop time as 5ms. And the output waveform had amplitude of 0.5957V (peak voltage).
+
+Input and output waveforms
+
 ![Screenshot 2025-03-23 190342](https://github.com/user-attachments/assets/55831373-6952-4a32-be29-9c5febc39864)
 
 ![Screenshot 2025-03-23 190759](https://github.com/user-attachments/assets/ff34bfa5-f657-47ea-b1b7-1bc3f25136ac)
@@ -137,6 +140,7 @@ To obtain the current value according to the given ratio, the provided values of
     
     * Our dc_offset = 0.5V and assume amplitude as 20mV and frequency as 1Khz. And the amplitude of obtained output waveform was 0.585V (peak voltage)
 
+Input and output waveforms
 
 ![Screenshot 2025-03-24 000352](https://github.com/user-attachments/assets/ba4b3a6b-a7b0-4da5-9d18-6ae762d3e760)
 
@@ -181,6 +185,8 @@ To obtain the current value according to the given ratio, the provided values of
 ![Screenshot 2025-03-24 004909](https://github.com/user-attachments/assets/f20b3c90-7048-4329-8100-5bb94eb37828)
 
 ### Transient analysis ( for 1:3 mirror ratio) :
+
+Input and output waveforms
 
 ![Screenshot 2025-03-24 005617](https://github.com/user-attachments/assets/0e692c22-7064-4224-9396-d7ab7bacf42c)
 
@@ -229,6 +235,7 @@ To obtain the current value according to the given ratio, the provided values of
 
 ### Transient analysis ( for 1:4 mirror ratio) :
 
+Input and output waveforms
 
 ![Screenshot 2025-03-24 012348](https://github.com/user-attachments/assets/2add23ef-4428-4f04-9512-6e3c32b9a36c)
 
@@ -243,5 +250,78 @@ To obtain the current value according to the given ratio, the provided values of
 
  Gain is 29.1db
 
+###  Current mirror for aspect ratio 2:1 
 
+ As we know It=Iref+Ix
+
+Therefore, for 2:1  aspect ratio Ix = Iref/2
+
+It = Iref + Iref/2
+
+So,Iref=(2/3)*It
+
+It=P/Vdd
+
+It=1mW/1.8V
+
+It=0.555mA.
+
+Therefore,Iref=0.3703mA.
+
+Here ,The aspect ratio of MOSFET M3 is twice of M2.
+
+To obtain the current value according to the given ratio, the provided values of W/L for M1 is 66.59um/180nm , M2 is 101.592um/180nm, and M3 is 203.184um/180nm.
+
+
+![Screenshot 2025-03-24 163900](https://github.com/user-attachments/assets/4a8229ce-d3bf-43ad-ac9a-752d9032beaf)
+
+### DC analysis (for 2:1  mirror ratio) :
+
+
+![Screenshot 2025-03-24 163946](https://github.com/user-attachments/assets/6acee8cd-c96e-47aa-8697-f57402769899)
+
+### Transient analysis ( for 2:1 mirror ratio) :
+
+Input and output waveforms
+
+
+![Screenshot 2025-03-24 165258](https://github.com/user-attachments/assets/9ccfc681-9af1-4cf9-a1c9-92eb688d5eb2)
+
+![Screenshot 2025-03-24 165226](https://github.com/user-attachments/assets/0c9398e0-d02b-4714-ae39-11a15e926d38)
+
+dc_offset = 0.5V and assume amplitude as 20mV and frequency as 1Khz. And the amplitude of obtained output waveform was 0.508V (peak voltage)
+
+
+  ### AC analysis  ( for 2:1  mirror ratio) :
+
+![Screenshot 2025-03-24 170014](https://github.com/user-attachments/assets/ef7fb653-1c24-49db-8b4a-ea7bd8e6255e)
+
+Gain is 29.06dB
+
+## Analyzing the current mirroring circuit by changing the w and L but maintaing the same aspect ratio.
+
+In the first design ,L=180nm ,W = 101.592um , the aspect ratio W/L = 564.4
+
+(a) when L= 180nm , W = 101.592um
+
+Mosfet 	Id
+M1 	   0.2778mA
+M2 	   0.2778mA 
+M3 	   0.2778mA
+
+(b) when L= 500nm, 
+
+We know the (w/L) ratio is 564.4.
+
+Therefore for L=500nm and the W = 0.2822mm.
+
+(c) when L= 1um, 
+
+We know the (w/L) ratio is 564.4.
+
+Therefore for L=1um and the W = 564.4um.
+
+#### comparision table
+
+![current mirror img](https://github.com/user-attachments/assets/72c9a5d7-b8b9-476c-99a6-f230b9a1b8f4)
 
