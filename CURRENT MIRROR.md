@@ -325,3 +325,5 @@ Therefore for L=1um and the W = 564.4um.
 
 ![current mirror img](https://github.com/user-attachments/assets/72c9a5d7-b8b9-476c-99a6-f230b9a1b8f4)
 
+## Analysis of current coping/mirroring by varying the current mirror ratio :
+
